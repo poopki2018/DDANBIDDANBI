@@ -415,7 +415,7 @@ public final class DDANBI_1201 extends JavaPlugin implements Listener {
     }
 
     private void handleEffect(Player player, int value) {
-        Random random = new Random(System.nanoTime());
+        Random random = new Random();
         World world = Bukkit.getWorlds().get(0); // 기본 월드를 가져옴'
         UUID playerUUID = player.getUniqueId(); // 플레이어 UUID
         Location playerLocation = player.getLocation();
@@ -484,7 +484,7 @@ public final class DDANBI_1201 extends JavaPlugin implements Listener {
 
                         EntityType entityType;
                         int randomValue = random.nextInt(100); // 0부터 99까지의 랜덤 숫자 생성
-
+                        System.out.println(randomValue);
                         if (randomValue < 95) { // 95% 확률
                             // 일반 몬스터 랜덤 선택
                             int monsterType = random.nextInt(6); // 0부터 5까지의 랜덤 숫자
