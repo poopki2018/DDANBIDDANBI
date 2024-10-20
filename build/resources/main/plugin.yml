@@ -1,0 +1,14 @@
+name: DDANBI_1201
+version: '1.0-SNAPSHOT'
+main: poopki.org.dDANBI_1201.DDANBI_1201
+api-version: '1.20'
+commands:
+  chzzk:
+    aliases: [hi]
+    description: HelloWorld
+  지급:
+    aliases: [ hi ]
+    description: HelloWorld
+  삭제:
+    aliases: [ hi ]
+    description: HelloWorld
