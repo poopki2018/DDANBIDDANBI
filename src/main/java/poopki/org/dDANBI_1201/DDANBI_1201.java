@@ -37,6 +37,7 @@ public final class DDANBI_1201 extends JavaPlugin implements Listener {
     private long donationStartTime = 0; // 도네이션 메시지 수신 시작 시간
     private static final long DONATION_DELAY = 1000; // 1초 지연
     private final HashMap<UUID, Integer> playerSkipRandomRemovalCount = new HashMap<>();
+    private Random random = new Random(System.nanoTime());
     Player lastTeleportedPlayer = null;
 
     @Override
@@ -395,7 +396,6 @@ public final class DDANBI_1201 extends JavaPlugin implements Listener {
 
         // 삭제할 아이템이 있는 경우
         if (!removableSlots.isEmpty()) {
-            Random random = new Random();
             int randomIndex = random.nextInt(removableSlots.size());
             int slotToRemove = removableSlots.get(randomIndex);
 
@@ -415,7 +415,6 @@ public final class DDANBI_1201 extends JavaPlugin implements Listener {
     }
 
     private void handleEffect(Player player, int value) {
-        Random random = new Random();
         World world = Bukkit.getWorlds().get(0); // 기본 월드를 가져옴'
         UUID playerUUID = player.getUniqueId(); // 플레이어 UUID
         Location playerLocation = player.getLocation();
@@ -585,7 +584,6 @@ public final class DDANBI_1201 extends JavaPlugin implements Listener {
                 onlinePlayers.remove(player); // 자기 자신 제거
 
                 if (!onlinePlayers.isEmpty()) {
-                    random = new Random(System.nanoTime());
                     Player randomPlayer;
 
                     do {
